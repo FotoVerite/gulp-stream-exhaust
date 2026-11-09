@@ -108,7 +108,6 @@ describe("exhaust", function () {
     });
 
     var tsReads = 0;
-    var flushed = false;
 
     var ts = new Transform({
       highWaterMark: 2,
@@ -117,7 +116,6 @@ describe("exhaust", function () {
         cb(null, chunk);
       },
       flush(cb) {
-        flushed = true;
         cb();
       },
     });
